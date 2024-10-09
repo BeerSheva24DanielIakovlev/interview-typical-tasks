@@ -13,13 +13,14 @@ public class InterviewTasks {
 
     public static boolean hasSumTwo(int[] array, int sum) {
         Set<Integer> seenNumbers = new HashSet<>();
+        boolean res = false;
         for (int number : array) {
             int complement = sum - number;
             if (seenNumbers.contains(complement)) {
-                return true;
+                res = true;
             }
             seenNumbers.add(number);
         }
-        return false;
+        return res;
     }
 }
